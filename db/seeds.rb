@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+require_relative '../app/models/article.rb'
+10.times do
+  Article.new({title: Faker::RickAndMorty.quote, content: Faker::Lorem.paragraph(2) })
+end
